@@ -1,0 +1,129 @@
+.header {
+    background-color: #D6E1AD;
+}
+.header_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25px;
+    padding-top: 2px;
+    color: #000;
+}
+.header_logo:hover {
+    text-decoration: none;
+    color: #000;
+}
+.header_logo p {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    margin-left: 13px;
+    margin-top: 25px;
+}
+.header_nav_wrap {
+    position: relative;
+}
+.header_nav a {
+    font-size: 20px;
+    color: #282828;
+    transition: 0.3s;
+    margin-right: 25px;
+}
+.header_nav a:hover {
+    text-decoration: none;
+    transition: 0.3s;
+    color: #fff;
+}
+.header .row {
+    display: flex;
+    align-items: center;
+}
+.header_right {
+    display: flex;
+    align-items: center
+}
+.header_right_inst {
+    background-image: url(/img/header/instagram.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 31px;
+    height: 31px;
+}
+.header_authorization {
+    font-size: 20px;
+    color: #282828;
+    transition: 0.3s;
+    border-radius: 10px;
+    background-color: rgb(171, 191, 68);
+    width: 87px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 19px;
+}
+.header_authorization:hover {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+.header_nav_menu {
+    background-image: url(/img/header/burger-menu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.header_nav_menu {
+    display: none;
+}
+@media (max-width: 992px) {
+    .header_nav a {
+        margin-right: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .header_nav_menu {
+        display: block;
+    }
+    .header_nav_wrap {
+        margin-top: 25px;
+    }
+    .header_nav {
+        display: none;
+        flex-wrap: wrap;
+        width: 200px;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #fff;
+        z-index: 2;
+    }
+    .header_nav a {
+        width: 100%;
+        margin-right: 0;
+    }
+    .header_nav a:hover {
+        color: #282828;
+    }
+    .header_nav_open {
+        display: flex;
+    }
+}
+@media (max-width: 575px) {
+    .header_nav_menu {
+        margin-left: auto;
+    }
+    .header_logo {
+        padding-bottom: 0;
+    }
+    .header_logo p {
+        font-size: 17px;
+    }
+    .header_right {
+        justify-content: center;
+        margin-top: 15px;
+        padding-bottom: 15px;
+    }
+}
