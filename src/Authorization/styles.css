@@ -1,0 +1,124 @@
+.authorization_form {
+    border-radius: 10px;
+    border: 12px solid RGBA(38, 39, 32, 0.588);
+    max-width: 490px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.authorization_form_head {
+    background-color: #0E0E0E;
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.authorization_form_head_logo {
+    color: #fff;
+    max-width: 125px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; 
+    padding-top: 28px;
+}
+.authorization_form_head_logo span {
+    margin-top: -15px;
+    display: inline-block;
+}
+.authorization_form_head_logo span:nth-child(2) {
+    margin-left: 41px;
+    margin-top: -23px;
+}
+.authorization_form_head_logo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.authorization_form_open {
+    color: #0E0E0E;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 40px;
+    line-height: 1;
+    margin-bottom: 63px;
+}
+.authorization_form_input_capto {
+    color: #0E0E0E;
+    font-size: 22px;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+.authorization_form_input {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    outline: none;
+    width: 100%;
+}
+.authorization_form_submit {
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgb(171, 191, 68);
+    width: 214px;
+    height: 41px;
+    border: none;
+    transition: 0.3s;
+}
+.authorization_form_submit:hover {
+    background-color: #9AAC3D;
+    transition: 0.3s;
+}
+.authorization_form_wrap  {
+    max-width: 214px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+}
+.authorization_form_wrap .authorization_form_input:nth-child(5) {
+    margin-bottom: 0;
+}
+.authorization_form_checkbox_wrap {
+    margin-bottom: 30px;
+}
+.authorization_form_checkbox_wrap *{
+    cursor: pointer;
+}
+.authorization_form_checkbox_wrap label {
+    margin-left: 5px;
+}
+.authorization_form_registr {
+    font-size: 12px;
+    color: #000;
+    margin-top: 5px;
+}
+.authorization_form_registr a {
+    color: #abbf44;
+    font-style: italic;
+    font-weight: 700;
+}
+.authorization_form_registr a:hover {
+    text-decoration: none;
+    color: #abbf44;
+}
+.authorization_form_input_password {
+    position: relative;
+}
+.authorization_form_input_password_eye {
+    background-image: url(/img/authorization/eye_open.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 16px;
+    position: absolute;
+    right: 3px;
+    top: 34px;
+    cursor: pointer;
+}
+.authorization_form_input_password_eye-close {
+    background-image: url(/img/authorization/eye_close.png);
+}

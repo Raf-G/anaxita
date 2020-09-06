@@ -5,7 +5,9 @@ p, h1, h2, h3, h4, div, ul, li, ol, a {
 a, button {
     outline: none;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 body {
     padding: 0;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }

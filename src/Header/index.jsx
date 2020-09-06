@@ -50,7 +50,7 @@ export default class Header extends Component {
                                     <Link to="/about">
                                         О приложении
                                     </Link>
-                                    <Link to="/Contact">
+                                    <Link to="/contact">
                                         Контакты
                                     </Link>
                                 </nav>
@@ -59,7 +59,7 @@ export default class Header extends Component {
                         <div className="col-xl-3 col-lg-3 col-md-3 col-sm-4">
                             <div className="header_right">
                                 <a className="header_right_inst" href="/"> </a>
-                                <Link to="/Authorization"
+                                <Link to="/authorization"
                                     className="header_authorization"
                                 >
                                     Войти
