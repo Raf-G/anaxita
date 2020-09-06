@@ -59,7 +59,7 @@ export default class Header extends Component {
                             <input id="authorization_form_checkbox" type="checkbox" />
                             <label htmlFor="authorization_form_checkbox">Запомннить меня</label>
                         </div>
-                        <input className="authorization_form_submit" type="submit" />
+                        <input className="authorization_form_submit" type="submit" value="Войти"/>
                         <div className="authorization_form_registr">
                             Нет аккаунта?
                             <Link to="/registration">
