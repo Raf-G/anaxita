@@ -26,6 +26,27 @@
 .home_text_list li:last-child {
     margin-bottom: 0;
 }
+.home_text a {
+    font-size: 43px;
+    font-weight: 700;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color:#00BCFF;
+    width: 292px;
+    height: 75px;
+    transition: 0.3s;
+    margin-top: 28px;
+    margin-left: 45px;
+}
+.home_text a:hover {
+    background-color: #00D7FF;
+    transition: 0.3s;
+    color: #000;
+    text-decoration: none;
+}
 
 @media (max-width: 768px) {
     .home {

@@ -1,13 +1,15 @@
 .authorization_form {
-    border-radius: 10px;
-    border: 12px solid RGBA(38, 39, 32, 0.588);
     max-width: 490px;
     width: 100%;
     margin: 0 auto;
     margin-top: 50px;
+    border-width: 5px;
+    border-color: rgba(0, 123, 255,0.588);
+    border-style: solid;
+    border-radius: 10px;
 }
 .authorization_form_head {
-    background-color: #0E0E0E;
+    background-color: #103643;
     min-height: 110px;
     display: flex;
     align-items: center;
@@ -24,6 +26,10 @@
     margin-right: auto;
     position: relative; 
     padding-top: 28px;
+}
+.authorization_form_head_logo:hover {
+    text-decoration: none;
+    color: #fff;
 }
 .authorization_form_head_logo span {
     margin-top: -15px;
@@ -53,23 +59,28 @@
     margin-bottom: 5px;
 }
 .authorization_form_input {
-    background-color: #fff;
-    border-radius: 10px;
+    background-color: #FCF7EC;
     margin-bottom: 20px;
     outline: none;
     width: 100%;
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 10px;
+    height: 39px;
 }
 .authorization_form_submit {
     color: #fff;
     border-radius: 10px;
-    background-color: rgb(171, 191, 68);
+    background-color: #00BCFF;
     width: 214px;
     height: 41px;
     border: none;
     transition: 0.3s;
+    outline: none;
 }
 .authorization_form_submit:hover {
-    background-color: #9AAC3D;
+    background-color: #00D7FF;
     transition: 0.3s;
 }
 .authorization_form_wrap  {
@@ -82,28 +93,23 @@
 .authorization_form_wrap .authorization_form_input:nth-child(5) {
     margin-bottom: 0;
 }
-.authorization_form_checkbox_wrap {
-    margin-bottom: 30px;
-}
-.authorization_form_checkbox_wrap *{
-    cursor: pointer;
-}
-.authorization_form_checkbox_wrap label {
-    margin-left: 5px;
-}
 .authorization_form_registr {
-    font-size: 12px;
+    font-size: 16px;
     color: #000;
     margin-top: 5px;
+    width: calc(245px + 30px);
+    text-align: center;
+    margin-left: -28px;
 }
 .authorization_form_registr a {
-    color: #abbf44;
-    font-style: italic;
+    color: #007bff;
     font-weight: 700;
+    transition: 0.3s;
 }
 .authorization_form_registr a:hover {
     text-decoration: none;
-    color: #abbf44;
+    color: rgb(64, 181, 88);
+    transition: 0.3s;
 }
 .authorization_form_input_password {
     position: relative;
@@ -115,10 +121,27 @@
     width: 18px;
     height: 16px;
     position: absolute;
-    right: 3px;
-    top: 34px;
+    right: 11px;
+    top: 39px;
     cursor: pointer;
 }
 .authorization_form_input_password_eye-close {
     background-image: url(/img/authorization/eye_close.png);
+}
+.authorization_error {
+    font-size: 14px;
+    color: #f23636;
+    border-radius: 5px;
+    background-color: rgba(242, 54, 54, 0.549);
+    left: 405px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.authorization_error span {
+    padding: 5px;
+    display: none;
 }

@@ -1,5 +1,5 @@
 .header {
-    background-color: #D6E1AD;
+    background-color: #FEF6E8;
 }
 .header_logo {
     display: flex;
@@ -30,9 +30,8 @@
     margin-right: 25px;
 }
 .header_nav a:hover {
-    text-decoration: none;
     transition: 0.3s;
-    color: #fff;
+    color: rgb(64, 181, 88);
 }
 .header .row {
     display: flex;
@@ -43,18 +42,23 @@
     align-items: center
 }
 .header_right_inst {
-    background-image: url(/img/header/instagram.png);
+    background-image: url(/img/header/inst.png);
     background-repeat: no-repeat;
     background-position: center;
     width: 31px;
     height: 31px;
+    transition: 0.3s;
+}
+.header_right_inst:hover {
+    background-image: url(/img/header/inst_hover.png);
+    transition: 0.3s;
 }
 .header_authorization {
     font-size: 20px;
-    color: #282828;
+    color: #000;
     transition: 0.3s;
     border-radius: 10px;
-    background-color: rgb(171, 191, 68);
+    background-color:#00BCFF;
     width: 87px;
     height: 31px;
     display: flex;
@@ -64,8 +68,9 @@
 }
 .header_authorization:hover {
     text-decoration: none;
-    color: #fff;
     transition: 0.3s;
+    background-color: #00D7FF;
+    color: #000;
 }
 .header_nav_menu {
     background-image: url(/img/header/burger-menu.png);

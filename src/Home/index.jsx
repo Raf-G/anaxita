@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -17,6 +18,9 @@ const Home = () => {
                             <li>Считай калории</li>
                             <li>Общайся на интересные темы</li>
                         </ul>
+                        <Link to="/registration">
+                            Начать
+                        </Link>
                     </div>
                 </div>
             </div>
