@@ -10,11 +10,13 @@ export default class Registration extends Component {
         this.state = {
             eye: false,
             name: '', 
-            classErrorName: 'registration_error_name',
+            nameValidator: false,
             email: '', 
-            classErrorEmail: 'registration_error_email',
+            emailValidator: false,
             password: '',
-            classErrorPassword: 'registration_error_password'
+            passwordValidator: false,
+            registrationValidator: false,
+            registrationValidatorText: ''
         };
         this.handleChangeName = this.handleChangeName.bind(this);
         this.handleChangeEmail = this.handleChangeEmail.bind(this);
@@ -32,25 +34,19 @@ export default class Registration extends Component {
     }
     handleSubmit(event) {
         event.preventDefault();
-        // !!! Заменить переключение классов написанное нативным JS на React !!!
-        if(!validator.isLength(this.state.name, {min:3, max: 15}) && !validator.isEmail(this.state.email) && !validator.isLength(this.state.password, {min: 6, max: undefined})) {
+        this.setState({nameValidator: false})
+        this.setState({emailValidator: false})
+        this.setState({passwordValidator: false})
+        this.setState({registrationValidator: false})
+        if(!validator.isLength(this.state.name, {min:3, max: 15}) || !validator.isEmail(this.state.email) || !validator.isLength(this.state.password, {min: 6, max: undefined})) {
             if(!validator.isLength(this.state.name, {min:3, max: 15})) {
-                console.log('Имя должно содержать от 3 до 15 символов')
-                document.querySelector('.registration_error_name').style.display = 'block';
-            } else {
-                document.querySelector('.registration_error_name').style.display = 'none';
+                this.setState({nameValidator: true})
             }
             if(!validator.isEmail(this.state.email)) {
-                console.log('Не верно введен email')
-                document.querySelector('.registration_error_email').style.display = 'block';
-            } else {
-                document.querySelector('.registration_error_email').style.display = 'none';
+                this.setState({emailValidator: true})
             }
             if(!validator.isLength(this.state.password, {min: 6, max: undefined})) {
-                console.log('Минимальная длинна пароля 6 символов')
-                document.querySelector('.registration_error_password').style.display = 'block';
-            } else {
-                document.querySelector('.registration_error_password').style.display = 'none';
+                this.setState({passwordValidator: true})
             }
             return
         }
@@ -61,9 +57,12 @@ export default class Registration extends Component {
                     console.log(res.statusText)
                 })
                 .catch((error) => {
-                    console.log(error)
+                    console.log(error.response.data.message);
+                    this.setState({
+                        registrationValidator: true,
+                        registrationValidatorText: error.response.data.message
+                    })
                 })
-            this.setState({name: '', email: '', password: '' })
             console.log('Регестрация прошла успешна')
             // document.location.href="/";
         }
@@ -85,7 +84,7 @@ export default class Registration extends Component {
         })
     }
     render() {
-        const {name, email, password, classErrorName, classErrorEmail, classErrorPassword} = this.state;
+        const {name, email, password, nameValidator, emailValidator, passwordValidator, registrationValidator, registrationValidatorText} = this.state;
 
         let classEye = 'registration_form_input_password_eye'
         if (this.state.eye) {
@@ -147,9 +146,10 @@ export default class Registration extends Component {
                                 <div className='registration_form_error'></div>
                             </div>
                             <div className="registration_error">
-                            <span className={classErrorName}>Имя должно содержать от 3 до 15 символов</span>
-                            <span className={classErrorEmail}>Не верно введен email</span>
-                            <span className={classErrorPassword}>Минимальная длинна пароля 6 символов</span>
+                            {nameValidator && <span>Имя должно содержать от 3 до 15 символов</span>}
+                            {emailValidator && <span>Не верно введен email</span>}
+                            {passwordValidator && <span>Минимальная длинна пароля 6 символов</span>}
+                            {registrationValidator && <span>{registrationValidatorText}</span>}
                             </div>
                             <input className="registration_form_submit" type="submit" value="Зарегистрироваться" />
                             <div className="registration_form_registr">

@@ -4,7 +4,7 @@ import axios from 'axios';
 import validator from 'validator';
 import './styles.css';
 
-export default class Header extends Component {
+export default class Authorization extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,7 +12,8 @@ export default class Header extends Component {
             email: '', 
             emailValidator: false,
             password: '',
-            passwordValidator: false
+            passwordValidator: false,
+            authorizationValidator: false,
         };
         this.handleChangeEmail = this.handleChangeEmail.bind(this);
         this.handleChangePassword = this.handleChangePassword.bind(this);
@@ -20,41 +21,42 @@ export default class Header extends Component {
     }
 
     handleChangeEmail(event) {
-        this.setState({ email: event.target.value, emailValidator: validator.isEmail(this.state.email) });
+        this.setState({ email: event.target.value});
     }
     handleChangePassword(event) {
-        this.setState({ password: event.target.value, passwordValidator: validator.isLength(this.state.password, {min: 6, max: undefined})});
+        this.setState({ password: event.target.value});
     }
     handleSubmit(event) {
         event.preventDefault();
-        // !!! Заменить переключение классов написанное нативным JS на React !!!
+        this.setState({authorizationValidator: false})
+        this.setState({emailValidator: false})
+        this.setState({passwordValidator: false})
         if(!validator.isEmail(this.state.email) || !validator.isLength(this.state.password, {min: 6, max: undefined})) {
             if(!validator.isEmail(this.state.email)) {
-                document.querySelector('.authorization_error_email').style.display = 'block';
-            } else {
-                document.querySelector('.authorization_error_email').style.display = 'none';
+                this.setState({emailValidator: true})
             }
             if(!validator.isLength(this.state.password, {min: 6, max: undefined})) {
-                document.querySelector('.authorization_error_password').style.display = 'block';
-            } else {
-                document.querySelector('.authorization_error_password').style.display = 'none';
+                this.setState({passwordValidator: true})
             }
+            console.log(this.state.passwordValidator)
             return;
         }
         try {
             axios.post(`https://api.calorie-calculator.ru/api/signin`, {email: this.state.email, password: this.state.password })
                 .then(res => {
                     console.log(res);
+                    console.log('Авторизациия прошла успешна')
                 })
                 .catch(error => {
-                    console.log(error.message);
+                    console.log(error.response.data.message);
+                    this.setState({authorizationValidator: true})
                 })
-            console.log('Авторизациия прошла успешна')
             // document.location.href="/";
         }
         catch {
             alert('Ошибка отправки')
         }
+        console.log(this.state.passwordValidator)
     }
 
     // Функция показа/скрытия пароля
@@ -70,7 +72,7 @@ export default class Header extends Component {
         })
     }
     render () {
-    const {email, password} = this.state;
+    const {email, password, emailValidator, passwordValidator, authorizationValidator} = this.state;
 
     // Условия открытие/закрытие глаза на пароле
     let classEye = 'authorization_form_input_password_eye'
@@ -119,9 +121,9 @@ export default class Header extends Component {
                             ></div>
                         </div>
                         <div className="authorization_error">
-                            <span className="authorization_error_name">Неверный логин или пароль</span>
-                            <span className="authorization_error_email">Не верно введен email</span>
-                            <span className="authorization_error_password">Минимальная длинна пароля 6 символов</span>
+                            {emailValidator && <span>Не верно введен email</span>}
+                            {passwordValidator && <span>Минимальная длинна пароля 6 символов</span>}
+                            {authorizationValidator && <span>Неверный логин или пароль</span>}
                         </div>
                         <input className="authorization_form_submit" type="submit" value="Войти"/>
                         <div className="authorization_form_registr">
