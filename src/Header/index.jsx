@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import "./styles.css";
 
@@ -44,15 +44,15 @@ export default class Header extends Component {
                                 >
                                 </div>
                                 <nav className={classMenu}>
-                                    <Link to="/">
+                                    <NavLink to="/" exact={true} activeClassName="header_nav_active">
                                         Главная
-                                    </Link>
-                                    <Link to="/about">
+                                    </NavLink>
+                                    <NavLink to="/about" activeClassName="header_nav_active">
                                         О приложении
-                                    </Link>
-                                    <Link to="/contact">
+                                    </NavLink>
+                                    <NavLink to="/contact" activeClassName="header_nav_active">
                                         Контакты
-                                    </Link>
+                                    </NavLink>
                                 </nav>
                             </div>
                         </div>

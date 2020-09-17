@@ -33,6 +33,11 @@
     transition: 0.3s;
     color: rgb(64, 181, 88);
 }
+.header_nav .header_nav_active {
+    transition: 0.3s;
+    color: rgb(64, 181, 88);
+    text-decoration: underline;
+}
 .header .row {
     display: flex;
     align-items: center;
