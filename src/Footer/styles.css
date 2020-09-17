@@ -11,11 +11,9 @@
     margin-left: 40px;
 }
 .footer_inst {
-    max-width: 110px;
-    width: 100%;
     text-align: center;
     padding-top: 20px;
-    padding-bottom: 43px;
+    padding-bottom: 20px;
     margin: 0 auto;
 }
 .footer_inst p {
@@ -26,8 +24,8 @@
     background-image: url(/img/header/inst.png);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 60px;
-    height: 60px;
+    width: 31px;
+    height: 31px;
     display: inline-block;
     transition: 0.3s;
 }
