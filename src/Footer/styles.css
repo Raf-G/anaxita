@@ -36,12 +36,6 @@
     background-image: url(/img/header/inst_hover.png);
     transition: 0.3s;
 }
-.footer_quest p {
-    font-size: 20px;
-    color: #282828;
-    line-height: 1;
-    margin-bottom: 15px;
-}
 .footer_quest a {
     font-size: 20px;
     color: #00bbff;
@@ -50,8 +44,7 @@
 }
 .footer_quest a:hover {
     text-decoration: none;
-    transition: 0.3s;
-    color: #31b850;
+    color: #00bbff;
 }
 
 @media (max-width: 992px) {

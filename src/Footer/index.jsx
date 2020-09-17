@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './styles.css';
 
 const Footer = () => {
@@ -14,7 +13,6 @@ const Footer = () => {
                     </div>
                     <div className="col-xl-6 col-lg-6 col-md-4 col-sm-12">
                         <div className="footer_inst">
-                            <p>Instagram</p>
                             <a href="/"> </a>
                         </div>
                     </div>
