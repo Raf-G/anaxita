@@ -47,6 +47,9 @@ export default class Header extends Component {
                                     <NavLink to="/" exact={true} activeClassName="header_nav_active">
                                         Главная
                                     </NavLink>
+                                    <NavLink to="/calculator" activeClassName="header_nav_active">
+                                        Калькулятор
+                                    </NavLink>
                                     <NavLink to="/about" activeClassName="header_nav_active">
                                         О приложении
                                     </NavLink>

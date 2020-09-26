@@ -46,6 +46,7 @@ export default class Authorization extends Component {
                 .then(res => {
                     console.log(res);
                     console.log('Авторизациия прошла успешна')
+                    console.log(res.data.token)
                 })
                 .catch(error => {
                     console.log(error.response.data.message);
@@ -73,6 +74,7 @@ export default class Authorization extends Component {
     }
     render () {
     const {email, password, emailValidator, passwordValidator, authorizationValidator} = this.state;
+    
 
     // Условия открытие/закрытие глаза на пароле
     let classEye = 'authorization_form_input_password_eye'
