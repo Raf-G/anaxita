@@ -1,0 +1,15 @@
+.calculator_input_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 14px;
+    margin-bottom: 19px;
+}
+@media (max-width:992px) {
+    .calculator_input_wrap {
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 300px;
+    }
+}

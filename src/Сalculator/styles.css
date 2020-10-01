@@ -31,14 +31,7 @@
 .calculator_more_list span {
     display: inline-block;
 }
-.calculator_input_wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #000;
-    padding-bottom: 14px;
-    margin-bottom: 19px;
-}
+
 .calculator_input input {
     font-size: 18px;
     color: #232323;
@@ -130,100 +123,6 @@
     background-color: rgb(30, 161, 60);
     transition: 0.3s;
 }
-
-/* Список продуктов */
-.calculator_list {
-    width: 100%;
-}
-.calculator_list_item {
-    background-image: url(/img/calculator/bg_list_item.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 30px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    line-height: 30px;
-    margin-bottom: 15px;
-}
-.calculator_list_item-show {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.calculator_list_item_name {
-    padding-left: 57px;
-    font-size: 21px;
-    color: rgb(0, 0, 0);
-}
-.calculator_list_item_kkal {
-    font-size: 21px;
-    color: rgb(0, 0, 0);
-}
-.calculator_list_item_btn {
-    display: flex;
-    align-items: center;
-    padding-right: 15px;
-}
-.calculator_list_item_btn_edit {
-    background-image: url(/img/calculator/icon_edit.png);
-    background-repeat: no-repeat;
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.calculator_list_item_btn_edit:hover {
-    background-image: url(/img/calculator/icon_edit-hover.png);
-    transition: 0.3s;
-}
-.calculator_list_item_btn_delete {
-    background-image: url(/img/calculator/icon_delete.png);
-    background-repeat: no-repeat;
-    width: 17px;
-    height: 18px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-left: 17px;
-}
-.calculator_list_item_btn_delete:hover {
-    background-image: url(/img/calculator/icon_delete-hover.png);
-    transition: 0.3s;
-}
-.calculator_list_item-edit {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    display: none;
-}
-.calculator_list_item-edit .calculator_input_wrap{
-    border-bottom: unset;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    width: 100%;
-    padding-left: 40px;
-    padding-right: 10px;
-}
-.calculator_list_item-edit_commit {
-    background-color: unset;
-    background-image: url(/img/calculator/icon_commit.png);
-    background-repeat: no-repeat;
-    width: 24px;
-    height: 24px;
-    border: unset;
-}
-.calculator_list_item-edit_btn {
-    display: flex;
-    align-items: center;
-}
-.calculator_list_item-edit_btn_close {
-    background-image: url(/img/calculator/icon_close.png);
-    background-repeat: no-repeat;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    margin-left: 7px;
-}
-
 /* Результат */
 .calculator_result {
     width: 100%;
@@ -235,13 +134,7 @@
     padding-left: 12px;
     padding-right: 12px;
 }
-
-
 @media (max-width:992px) {
-    .calculator_input_wrap {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
     .calculator_input input {
         max-width: 150px;
         width: 100%;
@@ -257,34 +150,5 @@
     .calculator_input_cal select {
         max-width: 150px;
         width: 100%;
-    }
-    .calculator_input_wrap {
-        max-width: 300px;
-    }
-    
-    /* Список продуктов */
-    .calculator_list_item {
-        background-image: unset;
-        background-color: #49BB7B;  
-        border-radius: 20px;  
-    }
-    .calculator_list_item-edit .calculator_input_wrap {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .calculator_list_item-edit {
-        justify-content: center;
-        padding: 10px 0;
-    }
-    .calculator_list_item_name {
-        padding-left: 15px;
-        line-height: 1;
-    }
-    .calculator_list_item_kkal {
-        text-align: center;
-        line-height: 1;
-    }
-    .calculator_list_item-show {
-        padding: 10px 0;
     }
 }

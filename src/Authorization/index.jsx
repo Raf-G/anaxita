@@ -44,24 +44,24 @@ export default class Authorization extends Component {
         try {
             axios.post(`https://api.calorie-calculator.ru/api/signin`, {email: this.state.email, password: this.state.password })
                 .then(res => {
-                    console.log(res);
                     console.log('Авторизациия прошла успешна')
-                    console.log(res.data.token)
+                    localStorage.setItem('cacheToken', res.data.token);
                 })
                 .catch(error => {
                     console.log(error.response.data.message);
                     this.setState({authorizationValidator: true})
+                    localStorage.removeItem('cacheToken')
                 })
             // document.location.href="/";
         }
         catch {
             alert('Ошибка отправки')
         }
-        console.log(this.state.passwordValidator)
     }
 
     // Функция показа/скрытия пароля
     showPassword = () => {
+        // !!! Переписать под реакт
         let typePassword = document.getElementById('authorization_password');
         if (typePassword.type === 'password') {
             typePassword.type = 'text';
@@ -74,9 +74,9 @@ export default class Authorization extends Component {
     }
     render () {
     const {email, password, emailValidator, passwordValidator, authorizationValidator} = this.state;
-    
 
     // Условия открытие/закрытие глаза на пароле
+    // !!! Переписать под реакт
     let classEye = 'authorization_form_input_password_eye'
     if (this.state.eye) {
         classEye += ' authorization_form_input_password_eye-close'

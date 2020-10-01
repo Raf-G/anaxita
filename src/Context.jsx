@@ -1,18 +1,27 @@
-import React, { useState } from "react";
-import Layout from './Layout';
+import React, { Component } from "react";
+const { Provider, Consumer } = React.createContext();
 
-var userDetailContext = React.createContext(null);
+class ContextProvider extends Component {
+  state = {
+    token: 'qweqwe'
+  };
+  toggleTheme = () => {
+    this.setState(prevState => {
+      return {
+        token: prevState.token === "Day" ? "Night" : "Day"
+      };
+    });
+  };
 
-export default function ContextComponent() {
-  var [userDetails] = useState({
-    token: 'qweqweqwewqe',
-    name: '',
-    age: 50
-  });
-
-  return (
-    <userDetailContext.Provider value={userDetails}>
-      <Layout userDetails={userDetails}/>
-    </userDetailContext.Provider>
-  );
+  render() {
+    return (
+      <Provider
+        value={{ token: this.state.token, toggleTheme: this.toggleTheme }}
+      >
+        {this.props.children}
+      </Provider>
+    );
+  }
 }
+
+export { ContextProvider, Consumer as ContextConsumer };
