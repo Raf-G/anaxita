@@ -52,7 +52,7 @@ export default class Authorization extends Component {
                     this.setState({authorizationValidator: true})
                     localStorage.removeItem('cacheToken')
                 })
-            // document.location.href="/";
+            document.location.href="/calculator";
         }
         catch {
             alert('Ошибка отправки')
