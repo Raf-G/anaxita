@@ -38,7 +38,14 @@ export default class CalculatorListItem extends Component {
         try {
             axios({
                 method: 'patch',
-                url: 'https://api.calorie-calculator.ru/api/products/' + this.props.item.id + '?/name=' + this.state.name + '&/product_nam=' + this.state.productNum + '&/calorie_num=' + this.state.calorieNum + '&/counting_type=' + this.state.countingType,
+                // url: 'https://api.calorie-calculator.ru/api/products/' + this.props.item.id + '?/name=' + this.state.name + '&/product_num=' + this.state.productNum + '&/calorie_num=' + this.state.calorieNum + '&/counting_type=' + this.state.countingType,
+                url: 'https://api.calorie-calculator.ru/api/products/' + this.props.item.id,
+                data: {
+                    name: this.state.name,
+                    product_num: this.state.productNum,
+                    calorie_num: this.state.calorieNum,
+                    counting_type: this.state.countingType
+                },
                 headers: {'Content-Type': 'application/json', 'Authorization' : 'Bearer ' + localStorage.getItem('cacheToken') }
             })
                 .then(res => {
